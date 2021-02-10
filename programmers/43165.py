@@ -9,7 +9,10 @@ def solution(numbers, target):
             return 0
         
         ret = 0
+
+        #뺄셈
         ret += dfs(index+1,total+numbers[index])
+        #덧셈
         ret += dfs(index+1,total-numbers[index])
         return ret
     

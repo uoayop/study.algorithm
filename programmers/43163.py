@@ -3,6 +3,8 @@
 
 import sys
 MAX_INT = 52372727
+
+#현재 단어와 몇 개의 알파벳 차이가 나는지 판별해주는 함수 compare
 def compare(s1,s2):
     #다르면 False
     cnt = 0
@@ -23,10 +25,11 @@ def solution(begin, target, words):
         for i,w in enumerate(words):
             #현재 단어랑 알파벳이 한개만 차이 나면
             if compare(word,w) and visited[i]==0:
-                visited[i]=1 #그 단어 방문해줘
+                visited[i]=1 #그 단어 방문해준다.
                 ret = min(ret, dfs(depth+1, w))
-                visited[i]=0 #방문 해제를 무조건 해줘야 한다. 왜냐면 다른 단어가 그 경로로 다시 들어갈 수도 잇잖아
-                # A -> B -> C  -> D 였는데 C에서 B로 돌아와서 D로 갈 수 없어
+                visited[i] = 0 
+                # 다른 단어가 그 경로로 다시 들어갈 수 있기 때문에 방문 해제를 반드시 해줘야 한다. 
+
         return ret
         
 

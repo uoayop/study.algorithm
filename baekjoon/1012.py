@@ -11,7 +11,6 @@ for _ in range(T):
     #배추밭 행 m, 배추밭 열 n, 배추 개수 k
     m,n,k = map(int,input().rsplit())
     graph = {}
-    # visited = [[0] * n] * m
     visited = [[0 for col in range(n)] for row in range(m)]
     count = 0
     ground = []

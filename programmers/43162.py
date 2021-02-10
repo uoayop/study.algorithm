@@ -16,15 +16,18 @@ def solution(n, computers):
                 else:
                     graph[row_index].append(num_index)
 
-    print(graph)
+    #print(graph)
 
     def dfs(index):
+        #방문한 곳이 아니므로 연결되어 있지 않다 = 다른 네트워크이므로 return 1
         if visited[index]==0:
-            visited[index]=1
+            visited[index] = 1
             while (graph[index]):
                 dfs(graph[index].pop(0))
             return 1
-        else: return 0
+        #방문한 곳이므로 연결되어 있다 = 같은 네트워크이므로 return 0
+        else: 
+            return 0
             
 
 
