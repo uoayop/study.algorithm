@@ -30,7 +30,7 @@ def bfs(v):
 #n개의 컴퓨터, m개의 관계
 n,m = map(int,input().rstrip().rsplit())
 graph = [[] for _ in range(n+1)]
-compare,answer, answer_list = 0, 0, ""
+compare,answer, answer_list = 0, 0, []
 
 queue = deque()
 
@@ -45,8 +45,10 @@ for i in range(1,len(graph)):
         compare = bfs(i)
         if answer < compare:
             answer = compare
-            answer_list = str(i)
+            answer_list = [i]
         elif answer == compare:
-            answer_list += (" "+str(i))
+            answer_list.append(i)
 
-print(answer_list)
+for ans in answer_list:
+    print(ans,end=" ")
+print()

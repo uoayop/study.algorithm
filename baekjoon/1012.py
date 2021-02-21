@@ -14,38 +14,31 @@ for _ in range(T):
     visited = [[0 for col in range(n)] for row in range(m)]
     count = 0
     ground = []
+    dx = [-1,1,0,0]
+    dy = [0,0,-1,1]
 
     for _ in range(k):
         x,y = map(int,input().rsplit())
-        ground.append([x,y])
-
-        if len(graph)==0:
-            graph[(x,y)]=[]
+        ground.append((x,y))
         
         graph[(x,y)]=[]
-        if (x-1, y) in graph:
-            graph[(x-1, y)].append([x,y])
-            graph[(x, y)].append([x-1,y])
-        if (x+1, y) in graph:
-            graph[(x+1, y)].append([x,y])
-            graph[(x, y)].append([x+1,y])
-        if (x, y-1) in graph:
-            graph[(x, y-1)].append([x,y])
-            graph[(x, y)].append([x,y-1])
-        if (x, y+1) in graph:
-            graph[(x, y+1)].append([x,y])
-            graph[(x, y)].append([x,y+1])
+        for k in range(4):
+            nx = x + dx[k]
+            ny = y + dy[k]
+
+            if (nx,ny) in graph:
+                graph[(nx,ny)].append((x,y))
+                graph[(x,y)].append((nx,ny))
 
     def dfs(i,j):
         if visited[i][j]==0:
             visited[i][j]=1
-            #print("[return 1]",i,j,graph)
+            
             while graph[(i,j)]:
                 temp = (graph[(i,j)].pop(0))
                 dfs(temp[0],temp[1])
             return 1
         else:
-            #print("[return 0]",i,j,graph)
             return 0
 
     for baechoo in ground:

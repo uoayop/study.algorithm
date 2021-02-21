@@ -21,7 +21,7 @@ for _ in range(T):
     def bfs(v):
         queue = deque()
         queue.append(v)
-        visited[v]=1
+        visited[v] = 1
 
         while(queue):
             v = queue.popleft()

@@ -1,6 +1,8 @@
 #토마토
 #bfs
-#https://www.acmicpc.net/problem/7576
+#https://www.acmicpc.net/problem/7569
+
+
 
 import sys
 #import numpy
@@ -25,13 +27,6 @@ for hei in range(h):
             tomato[hei][row][col] = num
             if num == '1':
                 queue.append((hei,row,col,0))
-
-# for hei in range(h):
-#     for row in range(n):
-#         for col in range(m):
-#             if tomato[hei][row][col] == '1':
-#                 #익은 토마토이면 queue에 cnt와 함께 넣어줌
-#                 queue.append((hei,row,col,0))
 
 while queue:
     #익은 토마토의 위치와 cnt를 꺼냄
