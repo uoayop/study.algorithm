@@ -18,9 +18,9 @@ def dijkstra(start):
         p = heapq.heappop(q)
         cur_cost, cur_location = p[0], p[1]
         # print("[cost,now]:",cost,now)
-        # 현재 위치한 정점과 연결된 정점 Next 들을 방문
+        # 현재 위치한 정점과 연결된 정점 Next 들 방문
         for next_cost, next_location in graph[cur_location]:
-            # 연결된 정점으로 이동하는데 드는 비용이 (현재 비용 + 이동 비용) 보다 더 크면 재할당 해줌
+            # (연결된 정점으로 이동 비용) vs (현재 비용 + 이동 비용): 비교해서 더 작은 값으로 재할당 해줌
             # print("[Next_cost,Next]:",Next_cost,Next)
             if distance[next_location] > cur_cost + next_cost:
                 distance[next_location] = cur_cost + next_cost
