@@ -23,24 +23,19 @@ for _ in range(n-1):
     else:
         graph[y].append(x)
 
-def dfs(cnt,v,answer):
+def dfs(v,answer):
     visited[v]=1
     for u in graph[v]:
-        cnt += 1
         if visited[u]==0:
-            if u==1:
-                answer[u] = 1
-            else:
-                dfs(cnt,u,answer)
+            if u!=1:
+                dfs(u,answer)
                 answer[u] = v
         else:
-            if u==1:
-                answer[v] = 1
-            else:
+            if u!=1:
                 answer[u] = v
 
     return answer
         
-answer = (dfs(0,1,answer))[2:]
+answer = (dfs(1,answer))[2:]
 for num in answer:
     print(num)

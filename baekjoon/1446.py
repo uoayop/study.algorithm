@@ -13,6 +13,13 @@ input = sys.stdin.readline
 # else (그 지점에 지름길이 없으면)
 #   : 이전 지점 + 1 vs 현재 지점 다익스트라 배열에 저장된 값을 비교 --> 최솟값으로 갱신
 
+'''
+* 해당 지점에 지름길이 있을 때
+지름길을 타고 도착하는 경우 vs ```현재 moved_distance``` 값 중 더 작은 값으로 갱신해준다.
+* 해당 지점에 지름길이 없을 때
+```moved_distance[다음 지점(;해당 지점 + 1)]``` 값이 ```현재 moved_distance + 1``` 보다 크면 
+```moved_distance[다음 지점]``` 의 값을 ```moved_distance[현재 지점] + 1``` 로 갱신해준다.
+'''
 
 #지름길 개수 n, 고속도로 길이 d
 n, d = map(int,input().rstrip().rsplit())
@@ -24,11 +31,13 @@ for i in range(n):
     start, end, length = map(int,input().rstrip().rsplit())
     graph[i]=(start,end,length)
 graph.sort()
+# 그래프의 값들을 정렬해준다. (start,end,length) 순으로
 
 def drive():
     now_length = 0
     now_index = 0
     moved_distance[0] = 0
+
     while now_length < d:
         while now_index < n:
             start, end, length = (graph[now_index])[0], (graph[now_index])[1], (graph[now_index])[2]
