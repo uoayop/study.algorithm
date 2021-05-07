@@ -34,6 +34,7 @@ def dfs(index):
 dfs(1)
 
 for num in visited:
-    if num==1: total += 1
+    if num==1: 
+        total += 1
 
 print(total-1)

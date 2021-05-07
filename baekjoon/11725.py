@@ -24,7 +24,7 @@ for _ in range(n-1):
         graph[y].append(x)
 
 def dfs(v,answer):
-    visited[v]=1
+    visited[v] = 1
     for u in graph[v]:
         if visited[u]==0:
             if u!=1:
