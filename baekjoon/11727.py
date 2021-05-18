@@ -1,5 +1,6 @@
 # 2xn 타일링2
 # https://www.acmicpc.net/problem/11727
+# dp
 
 import sys
 input = sys.stdin.readline

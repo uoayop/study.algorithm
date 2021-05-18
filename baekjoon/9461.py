@@ -1,5 +1,6 @@
 # 파도반 수열
 # https://www.acmicpc.net/problem/9461
+# dp
 
 import sys
 input = sys.stdin.readline

@@ -1,5 +1,6 @@
 # 이친수
 # https://www.acmicpc.net/problem/2193
+# dp
 
 import sys
 input = sys.stdin.readline

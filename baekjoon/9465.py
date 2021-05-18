@@ -1,5 +1,6 @@
 # 스티커
 # https://www.acmicpc.net/problem/9465
+# dp
 
 import sys
 input = sys.stdin.readline
@@ -23,8 +24,7 @@ for _ in range(T):
               stickers[1][0] + stickers[0][1]))
     else:
         dp[0][0], dp[1][0] = stickers[0][0], stickers[1][0]
-        dp[0][1], dp[1][1] = stickers[0][1] + \
-            stickers[1][0], stickers[0][0] + stickers[1][1]
+        dp[0][1], dp[1][1] = stickers[0][1] + stickers[1][0], stickers[0][0] + stickers[1][1]
 
         '''
         dp[0][i]는 현재 위치의 스티커 값(stickers[0][i]) + 

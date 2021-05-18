@@ -25,16 +25,23 @@ def dfs(x):
 
     if x == n:
         cnt += 1
-    else:
-        for i in range(n):
-            rows[x] = i
-            # (x,i)에 퀸을 놓고, 이전 행과 겹치지 않는지 체크해줌
-            if check(x):
-                # 겹치지 않으면 다음 행으로 이동
-                dfs(x+1)
+        return
+
+    for i in range(n):
+        if visited[i]: 
+            continue
+
+        rows[x] = i
+        # (x,i)에 퀸을 놓고, 이전 행과 겹치지 않는지 체크해줌
+        if check(x):
+            visited[i] = True
+            # 겹치지 않으면 다음 행으로 이동
+            dfs(x+1)
+            visited[i] = False
 
 n = int(input())
 rows = [0] * n
+visited = [False] * n
 cnt = 0
 
 dfs(0)
