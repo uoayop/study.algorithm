@@ -22,6 +22,8 @@
 
 # print(heapq.heappop(b)[0])
 
+
+
 #https://claude-u.tistory.com/449
 # 이분탐색으로 어떤 수보다 작은 수의 곱(i*j)이 몇개인지 알아내면 됨
 # a보다 작은 숫자가 몇개인지 찾아내면 a가 몇번째 숫자인지 알아낼 수 있음
@@ -37,18 +39,17 @@ n = int(input())
 k = int(input())
 
 start, end = 0, k
-# k번째 수는 k를 넘을 수 없다.
+# k번째 수는 k보다 클 수 없음
 
 while start <= end:
-    # print("[start]:{}, [end]:{}".format(start,end))
     mid = (start+end) // 2
-    # print("[mid]:",mid)
     cnt = 0
 
     for i in range(1,n+1):
         # print("[mid//i]:{}, [n]:{}".format(mid//i,n))
         cnt += min(mid//i, n)   
-        # mid // i가 n보다 클 수 있기 때문에 최대 n값을 갖게 해줌
+        # (mid // i)가 n보다 클 수 있기 때문에 최대 n값을 갖게 해줌
+        
     # print("[cnt]:",cnt)   
     if cnt >= k:
         #최솟값을 찾아야하므로 같을 때는 끝범위를 줄여준다.
