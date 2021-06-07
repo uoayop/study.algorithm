@@ -21,20 +21,4 @@ while l < r:
     else:
         r -= 1
 
-# for l in range(n):
-#     curr = liquids[l]
-#     r = l + 1
-#     while r < n:
-#         curr += liquids[r]
-    
-#         if abs(answer) > abs(curr):
-#             answer = curr
-#             ansl, ansr = liquids[l], liquids[r]
-
-#         curr -= liquids[r]
-#         r += 1
-#         print("[l]:{2}, [r]:{3}, [answer]:{0}, [abs(curr)]:{1}".format(answer, abs(curr),l,r))
-    
-#     curr -= liquids[l]
-
 print(ansl, ansr)

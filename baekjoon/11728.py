@@ -20,7 +20,6 @@ while l < n and r < m:
         result.append(b[r])
         r += 1
     
-    print(result, l, r)
 
 while l < n:
     result.append(a[l])
