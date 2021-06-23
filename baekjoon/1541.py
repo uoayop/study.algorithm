@@ -13,6 +13,7 @@ order = input().rstrip()
 sub1 = list(order.rsplit('-'))
 # print(sub1)
 
+temp = 0
 first = True
 for row in sub1:
     sub2 = list(map(int,''.join(row).rsplit('+')))
